@@ -1,7 +1,38 @@
 <%- include('./partials/head.ejs') %>
 
-<main>
-  
-</main>
+    <main>
+        <section class="score-list">
 
-<%- include('./partials/foot.ejs') %>
+        </section>
+        <section class="player-list">
+            <section class="home-team">
+                <h2>Home Team</h2>
+                <ul>
+                    <% team1Players.forEach(test=> { %>
+                        <li>
+                            <%= test.name %>
+                            <!-- <% if (test.gender==="M") { %> 
+                                
+                                <% }else{ %>
+                                     <%= team1Players.gender %>
+                                <% } %> -->
+                        </li>
+                        <% }) %>
+                </ul>
+
+            </section>
+            <section class="away-team">
+                <h2>Away Team</h2>
+                <ul>
+                    <% team2Players.forEach(test=> { %>
+                        <li>
+                            <%= test.name %>
+                        </li>
+                        <% }) %>
+                </ul>
+            </section>
+
+        </section>
+    </main>
+
+    <%- include('./partials/foot.ejs') %>

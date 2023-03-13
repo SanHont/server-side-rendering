@@ -3,11 +3,12 @@
 --------------------------------------------------------------*/
 
 :root {
-  --delft-blue: #3A3C63;
-  --floral-white: #F9F4EA;
-  --atomic-tangerin: #F19460;
-  --keppel: #51B599;
-  --iris: #6E46CC;
+  --c-delft-blue: #3A3C63;
+  --c-floral-white: #F9F4EA;
+  --c-atomic-tangerin: #F19460;
+  --c-keppel: #51B599;
+  --c-iris: #6E46CC;
+  --c-raisin-black: #1E1D22;
 }
 
 /*--------------------------------------------------------------
@@ -15,20 +16,53 @@
 --------------------------------------------------------------*/
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body,
-  html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--c-delft-blue);
+  color: var(--c-floral-white);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 /*--------------------------------------------------------------
 # HEADER
 --------------------------------------------------------------*/
 
+header {
+  background-color: var(--c-raisin-black);
+  padding: 0rem 2rem;
+}
+
+header img {
+  width: 6%;
+  height: auto;
+}
+
+/*--------------------------------------------------------------
+# MAIN
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# PLAYER-LIST
+--------------------------------------------------------------*/
+
+.player-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.player-list li {
+  list-style: none;
+}
