@@ -4,6 +4,7 @@ import express from 'express'
 const urls = [
     "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/game/943.json",
     "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/game/943/statistics.json",
+    "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/facts/Player/8607.json"
 ];
 
 // Maakt een nieuwe express app aan
@@ -15,12 +16,11 @@ app.set('views', './views')
 app.use(express.static('public'))
 
 // Maak een route voor de index
-
-app.get('/', (request, response) => {
-    fetchJson('https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/game/943.json').then((data) => {
-        response.render('index', data)
-    })
-})
+app.get("/", async function (request, response) {
+    const [data1, data2, data3] = await Promise.all(urls.map(fetchJson));
+    const data = { data1, data2, data3 };
+    response.render("index", data);
+});
 
 // Stel het poortnummer in en start express
 app.set('port', process.env.PORT || 8000)

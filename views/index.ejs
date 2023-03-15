@@ -1,37 +1,33 @@
 <%- include('./partials/head.ejs') %>
 
     <main>
+        <section class="live-score">
+
+        </section>
         <section class="score-list">
 
         </section>
         <section class="player-list">
             <section class="home-team">
-                <h2>Home Team</h2>
-                <ul>
-                    <% team1Players.forEach(test=> { %>
-                        <li>
-                            <%= test.name %>
-                            <!-- <% if (test.gender==="M") { %> 
-                                
-                                <% }else{ %>
-                                     <%= team1Players.gender %>
-                                <% } %> -->
-                        </li>
-                        <% }) %>
-                </ul>
-
+                <h2>HOME TEAM</h2>
+                <% data1.team1Players.forEach(players=> { %>
+                    <p id="playerss">
+                        <%= players.name %>
+                            <span id="number"><%=players.jerseyNumber%></span>
+                            
+                    </p>
+                    <% }) %>
             </section>
             <section class="away-team">
-                <h2>Away Team</h2>
-                <ul>
-                    <% team2Players.forEach(test=> { %>
-                        <li>
-                            <%= test.name %>
-                        </li>
-                        <% }) %>
-                </ul>
+                <h2>AWAY TEAM</h2>
+                <% data1.team2Players.forEach(players=> { %>
+                    <p id="playerss">
+                        <%= players.name %>
+                            <span id="number"><%=players.jerseyNumber%></span>
+                            
+                    </p>
+                    <% }) %>
             </section>
-
         </section>
     </main>
 
